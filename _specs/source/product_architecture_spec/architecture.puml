@@ -1,0 +1,65 @@
+@startuml
+' Set direction as top to bottom
+top to bottom direction
+skinparam linetype ortho
+
+' Define classes with additional formatting
+class "Todo.MainScreenView" {
+    MainScreenView|
+    display_main_menu(): None
+}
+
+class "Todo.ModifyScreenView" {
+    ModifyScreenView|
+    display_modify_menu(): None
+    display_tasks(): None
+}
+
+class "Todo.Task" {
+    Task|
+    category : str
+    due_date : str
+    is_completed : bool
+    priority : str
+    task_name : str
+    modify_category(new_category: str): None
+    modify_due_date(new_due_date: str): None
+    modify_is_completed(): None
+    modify_priority(new_priority: str): None
+    modify_task_name(new_task_name: str): None
+}
+
+class "Todo.TaskView" {
+    TaskView|
+    display_completed_task(): None
+    display_pending_task(): None
+}
+
+class "Todo.TasksPool" {
+    TasksPool|
+    completed_tasks : list
+    pending_tasks : list
+}
+
+class "Todo.TasksPoolAction" {
+    TasksPoolAction|
+    add_task(task: Task): None
+    modify_task(task_number: int, prop_number: int, changed_value: str): None
+    remove_task(task_number: int): None
+    shift_task(task_number: int): None
+}
+
+class "Todo.TodoApp" {
+    TodoApp|
+    handle_modification(prop_to_modify: int): str
+    start(): None
+}
+
+' Define relationships with additional formatting
+"Todo.TodoApp" --> "Todo.TasksPoolAction"
+"Todo.TodoApp" --> "Todo.MainScreenView"
+"Todo.TodoApp" --> "Todo.Task"
+"Todo.MainScreenView" --> "Todo.ModifyScreenView"
+"Todo.MainScreenView" --> "Todo.TaskView"
+"Todo.TasksPoolAction" --> "Todo.TasksPool"
+@enduml
