@@ -1,11 +1,5 @@
 class TaskView:
-    """
-    contains functions to display the list of pending and completed tasks separately
-    """
     def display_pending_task(self) -> None:
-        """
-        displays the list of pending tasks
-        """
         print("\033[46mPENDING TASKS: \033[0m")
         if len(self.pending_tasks) == 0:
             print("Yay! you have no pending tasks")
@@ -19,9 +13,6 @@ class TaskView:
                     print(f'Priority: {task.priority}')
 
     def display_completed_task(self) -> None:
-        """
-        displays the list of completed tasks
-        """
         print("================= \n")
         print("\033[46mCOMPLETED TASKS: \033[0m")
         if len(self.completed_tasks) == 0:

@@ -2,20 +2,10 @@ from TaskView import TaskView
 from ModifyView import ModifyScreenView
 
 class MainScreenView(TaskView, ModifyScreenView):
-    """
-    contains function which displays the main menu when the todo app is started
-    """
     def __init__(self) -> None:
-        """
-        initialises the parent class attributes
-        """
         super().__init__()
 
     def display_main_menu(self) -> None:
-        """
-        displays the startup menu for the app
-        with all the options which can be used by user
-        """
         menu_string = '''
         What do you want to do?   
         1. Add a new task

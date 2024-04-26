@@ -3,34 +3,12 @@ from TaskPoolAction import TasksPoolAction
 from MainScreenView import MainScreenView
 
 class TodoApp(TasksPoolAction,MainScreenView):
-    """
-    starts the todo app by calling the function
-    which displays main menu and then it handles the user input accordingly,
-    also contains helper function to handle the modification of tasks
-    """
     def __init__(self) -> None:
-        """
-        initialises the parent class attributes
-        """
 
         TasksPoolAction.__init__(self)
         MainScreenView.__init__(self)
 
     def handle_modification(self,prop_to_modify: int) -> str:
-        """
-        receives user input for the modified value of the property (specified with its serial number)
-            1. task name
-            2. category
-            3. completion status
-            4. due date
-            5. priority
-
-        : param prop_to_modify: serial number of the property to be modified
-        : type prop_to_modify: int
-
-        : return: modified value for the property
-        : rtype: str
-        """
         if prop_to_modify == 1:
             new_task_name = input("Enter new task name: ")
             return new_task_name
@@ -52,16 +30,6 @@ class TodoApp(TasksPoolAction,MainScreenView):
         
         
     def start(self) -> None:
-        """
-        starts the app by displaying the main menu which has options for:
-            - adding a task
-            - modifying an existing task
-            - deleting a task
-            - viewing the todo list
-            - exiting the app
-
-        based on the user input from the menu, respective functions are called for each of the options
-        """
         while True:
             self.display_main_menu()
             input_choice = int(input())
