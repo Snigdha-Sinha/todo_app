@@ -13,6 +13,6 @@ class MainScreenView(TaskView, ModifyScreenView):
         3. Delete a task
         4. View the Todo list
         5. Quit
-        \033[33mEnter choice (1/2/3/4/5): \033[0m
+        Enter choice (1/2/3/4/5):
         '''
         print(menu_string,end=" ")

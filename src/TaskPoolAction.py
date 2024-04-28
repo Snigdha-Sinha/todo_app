@@ -15,9 +15,9 @@ class TasksPoolAction(TasksPool):
     def remove_task(self,task_number: int) -> None:
         if 1 <= task_number <= len(self.pending_tasks):
             self.pending_tasks.pop(task_number-1)
-            print(f'\033[32mTask {task_number} deleted from todo list\033[0m')
+            print(f'Task {task_number} deleted from todo list')
         else:
-            print("\033[31mPlease enter a valid task number\033[0m")
+            print("Please enter a valid task number")
 
     def shift_task(self, task_number: int) -> None:
         removed_task = self.pending_tasks.pop(task_number-1)

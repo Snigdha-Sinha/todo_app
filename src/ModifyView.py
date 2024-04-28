@@ -8,7 +8,7 @@ class ModifyScreenView:
         3. Completion Status
         4. Due Date
         5. Priority
-        \033[33mEnter choice (1/2/3/4/5): \033[0m
+        Enter choice (1/2/3/4/5): 
         '''
         print(modify_string, end = " ")
         

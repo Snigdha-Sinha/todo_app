@@ -41,38 +41,38 @@ class TodoApp(TasksPoolAction,MainScreenView):
                 priority = input("Enter priority: ")
                 task = Task(task_name,category,due_date,priority)
                 self.add_task(task)
-                print("\033[32mTask added successfully\033[0m")
+                print("Task added successfully")
 
             elif input_choice == 2:
                 self.display_tasks()
-                task_to_modify = int(input("\033[33menter task number to be modified: \033[0m"))
+                task_to_modify = int(input("enter task number to be modified: "))
                 if 1 <= task_to_modify <= len(self.pending_tasks):
                     self.display_modify_menu()
                     prop_to_modify = int(input())
                     changed_value = self.handle_modification(prop_to_modify)
                     self.modify_task(task_to_modify,prop_to_modify,changed_value)
-                    print("\033[32mTask modified successfully\033[0m")
+                    print("Task modified successfully")
                 else:
-                    print("\033[31mPlease enter valid choice\033[0m")
+                    print("Please enter valid choice")
 
             elif input_choice == 3:
                 if len(self.pending_tasks)>0:
                     self.display_tasks()
-                    task_number = int(input("\033[33mEnter task number to delete: \033[0m"))
+                    task_number = int(input("Enter task number to delete: "))
                     self.remove_task(task_number)
                 else:
-                    print("\033[32mNo tasks left to delete..\033[0m")
+                    print("No tasks left to delete..")
 
             elif input_choice == 4:
                 self.display_pending_task()
                 self.display_completed_task()
 
             elif input_choice == 5:
-                print("\033[32mExiting.. \033[0m")
+                print("Exiting.. ")
                 break
 
             else:
-                print("\033[31mInvalid choice.. please try again\033[0m")
+                print("Invalid choice.. please try again")
     
 
         
