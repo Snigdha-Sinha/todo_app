@@ -15,3 +15,10 @@ def test_add_task():
     assert task_pool.pending_tasks[0].category == category
     assert task_pool.pending_tasks[0].due_date == due_date
     assert task_pool.pending_tasks[0].priority == priority
+    task_pool2 = TasksPoolAction()
+    task_pool2.add_task(task)
+    assert len(task_pool2.pending_tasks) == 1
+    assert task_pool2.pending_tasks[0].task_name == task_name
+    assert task_pool2.pending_tasks[0].category == category
+    assert task_pool2.pending_tasks[0].due_date == due_date
+    assert task_pool2.pending_tasks[0].priority == priority
