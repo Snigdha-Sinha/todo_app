@@ -1,3 +1,6 @@
+import datetime
+
+
 class Task:
     def __init__(self,task_name:str,category: str,due_date: str, priority: str) -> None:
 
@@ -6,6 +9,7 @@ class Task:
         self.is_completed = False
         self.due_date = due_date
         self.priority = priority
+        self.timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     def modify_task_name(self,new_task_name: str) -> None:
         self.task_name = new_task_name
